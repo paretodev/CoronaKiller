@@ -26,12 +26,13 @@
 		1C6D90DB2466DBE300263361 /* Checkpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D90DA2466DBE300263361 /* Checkpoint.swift */; };
 		1C70B94F2470E4F40016F548 /* addressSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C70B94E2470E4F40016F548 /* addressSearchView.swift */; };
 		1C70B955247124F70016F548 /* searchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C70B954247124F70016F548 /* searchResults.swift */; };
-		1C70B9592471285A0016F548 /* ForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C70B9572471285A0016F548 /* ForEach.swift */; };
-		1C70B95A2471285A0016F548 /* IndexedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C70B9582471285A0016F548 /* IndexedCollection.swift */; };
 		1C70B95C247128D60016F548 /* searchResultsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C70B95B247128D60016F548 /* searchResultsStore.swift */; };
 		1C70B95E24713FC30016F548 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C70B95D24713FC30016F548 /* RowView.swift */; };
 		1C7A991C2495A8E0001D3D28 /* StoresStockInfoSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A991B2495A8E0001D3D28 /* StoresStockInfoSet.swift */; };
 		1C7A991E2495AC52001D3D28 /* NowArtworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A991D2495AC52001D3D28 /* NowArtworks.swift */; };
+		1CB3E74F24BC8C480032BE93 /* ForEach2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3E74E24BC8C480032BE93 /* ForEach2.swift */; };
+		1CB3E75124BC8C790032BE93 /* IndexedCollection2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3E75024BC8C790032BE93 /* IndexedCollection2.swift */; };
+		1CB3E75524BC98660032BE93 /* MaskStockStores2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3E75424BC98660032BE93 /* MaskStockStores2.swift */; };
 		1CD2E1902459D61700B5F8D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2E18F2459D61700B5F8D2 /* AppDelegate.swift */; };
 		1CD2E1922459D61700B5F8D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2E1912459D61700B5F8D2 /* SceneDelegate.swift */; };
 		1CD2E1942459D61700B5F8D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2E1932459D61700B5F8D2 /* ContentView.swift */; };
@@ -43,8 +44,6 @@
 		1CD2E1AE2459F30900B5F8D2 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2E1AD2459F30900B5F8D2 /* WebView.swift */; };
 		1CD2E1B02459F8B700B5F8D2 /* RegionPatient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2E1AF2459F8B700B5F8D2 /* RegionPatient.swift */; };
 		1CD2E1B22459FA7700B5F8D2 /* NationwideStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2E1B12459FA7700B5F8D2 /* NationwideStatus.swift */; };
-		1CE0F3AE24A718120009BF39 /* MaskStockStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE0F3AD24A718120009BF39 /* MaskStockStores.swift */; };
-		1CE0F3B024A750910009BF39 /* maskStockStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE0F3AF24A750910009BF39 /* maskStockStores.swift */; };
 		1CE0F3B224A750BB0009BF39 /* RealMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE0F3B124A750BB0009BF39 /* RealMapView.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,12 +67,13 @@
 		1C6D90DA2466DBE300263361 /* Checkpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkpoint.swift; sourceTree = "<group>"; };
 		1C70B94E2470E4F40016F548 /* addressSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addressSearchView.swift; sourceTree = "<group>"; };
 		1C70B954247124F70016F548 /* searchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchResults.swift; sourceTree = "<group>"; };
-		1C70B9572471285A0016F548 /* ForEach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForEach.swift; path = ../../BarcelonaListUp/Extensions/ForEach.swift; sourceTree = "<group>"; };
-		1C70B9582471285A0016F548 /* IndexedCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IndexedCollection.swift; path = ../../BarcelonaListUp/Extensions/IndexedCollection.swift; sourceTree = "<group>"; };
 		1C70B95B247128D60016F548 /* searchResultsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchResultsStore.swift; sourceTree = "<group>"; };
 		1C70B95D24713FC30016F548 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		1C7A991B2495A8E0001D3D28 /* StoresStockInfoSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresStockInfoSet.swift; sourceTree = "<group>"; };
 		1C7A991D2495AC52001D3D28 /* NowArtworks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowArtworks.swift; sourceTree = "<group>"; };
+		1CB3E74E24BC8C480032BE93 /* ForEach2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEach2.swift; sourceTree = "<group>"; };
+		1CB3E75024BC8C790032BE93 /* IndexedCollection2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedCollection2.swift; sourceTree = "<group>"; };
+		1CB3E75424BC98660032BE93 /* MaskStockStores2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskStockStores2.swift; sourceTree = "<group>"; };
 		1CD2E18C2459D61700B5F8D2 /* CoronaKiller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoronaKiller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CD2E18F2459D61700B5F8D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CD2E1912459D61700B5F8D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,8 +87,6 @@
 		1CD2E1AD2459F30900B5F8D2 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		1CD2E1AF2459F8B700B5F8D2 /* RegionPatient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionPatient.swift; sourceTree = "<group>"; };
 		1CD2E1B12459FA7700B5F8D2 /* NationwideStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationwideStatus.swift; sourceTree = "<group>"; };
-		1CE0F3AD24A718120009BF39 /* MaskStockStores.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MaskStockStores.swift; path = "../../../../../MagoshareDataRecovery Recovered 202006271500/APFS_0001/Macintosh HD - Data/Users/sucky/Desktop/RWL_tutorials/2.MakeYourSecond_iOS_App/CoronaKiller/CoronaKiller/DataModel/MaskStockStores.swift"; sourceTree = "<group>"; };
-		1CE0F3AF24A750910009BF39 /* maskStockStores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maskStockStores.swift; sourceTree = "<group>"; };
 		1CE0F3B124A750BB0009BF39 /* RealMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,8 +104,8 @@
 		1C70B9562471284D0016F548 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1C70B9572471285A0016F548 /* ForEach.swift */,
-				1C70B9582471285A0016F548 /* IndexedCollection.swift */,
+				1CB3E75024BC8C790032BE93 /* IndexedCollection2.swift */,
+				1CB3E74E24BC8C480032BE93 /* ForEach2.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -183,8 +181,6 @@
 				1C70B954247124F70016F548 /* searchResults.swift */,
 				1C70B95B247128D60016F548 /* searchResultsStore.swift */,
 				1C6CF08D2491B06D009EE07F /* GetLocation.swift */,
-				1CE0F3AF24A750910009BF39 /* maskStockStores.swift */,
-				1CE0F3AD24A718120009BF39 /* MaskStockStores.swift */,
 				1C6CF0932491C064009EE07F /* realtimeDisplayMaskStockInfo.swift */,
 				1C6CF0972491EB9A009EE07F /* Artwork.swift */,
 				1C7A991B2495A8E0001D3D28 /* StoresStockInfoSet.swift */,
@@ -194,6 +190,7 @@
 				1C6C71A224963DB1007BD5D7 /* ConfirmerAppearance.swift */,
 				1C6C71AA24965318007BD5D7 /* ArtworkViews2.swift */,
 				1C6C71AE24966C74007BD5D7 /* MaskSales.swift */,
+				1CB3E75424BC98660032BE93 /* MaskStockStores2.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -272,11 +269,9 @@
 				1C6C71AD24966AEC007BD5D7 /* MasksSalesVIew.swift in Sources */,
 				1C6C71AF24966C74007BD5D7 /* MaskSales.swift in Sources */,
 				1C6C71A9249650E5007BD5D7 /* RowView2.swift in Sources */,
-				1CE0F3B024A750910009BF39 /* maskStockStores.swift in Sources */,
 				1CD2E1AA2459E2AF00B5F8D2 /* News.swift in Sources */,
 				1CD2E1902459D61700B5F8D2 /* AppDelegate.swift in Sources */,
 				1C70B955247124F70016F548 /* searchResults.swift in Sources */,
-				1C70B9592471285A0016F548 /* ForEach.swift in Sources */,
 				1C6C71A724964A46007BD5D7 /* Artwork2.swift in Sources */,
 				1C6C71A324963DB1007BD5D7 /* ConfirmerAppearance.swift in Sources */,
 				1C70B95C247128D60016F548 /* searchResultsStore.swift in Sources */,
@@ -291,20 +286,21 @@
 				1CD2E1B02459F8B700B5F8D2 /* RegionPatient.swift in Sources */,
 				1C6D90DB2466DBE300263361 /* Checkpoint.swift in Sources */,
 				1C6C71A524964395007BD5D7 /* AddressSearchView2.swift in Sources */,
+				1CB3E74F24BC8C480032BE93 /* ForEach2.swift in Sources */,
 				1CD2E1A52459DC2D00B5F8D2 /* NewsRoom.swift in Sources */,
 				1C6C719F24963A98007BD5D7 /* PatientsPathView.swift in Sources */,
+				1CB3E75124BC8C790032BE93 /* IndexedCollection2.swift in Sources */,
 				1C7A991C2495A8E0001D3D28 /* StoresStockInfoSet.swift in Sources */,
 				1C7A991E2495AC52001D3D28 /* NowArtworks.swift in Sources */,
 				1CD2E1AE2459F30900B5F8D2 /* WebView.swift in Sources */,
 				1C70B95E24713FC30016F548 /* RowView.swift in Sources */,
 				1C70B94F2470E4F40016F548 /* addressSearchView.swift in Sources */,
 				1CE0F3B224A750BB0009BF39 /* RealMapView.swift in Sources */,
+				1CB3E75524BC98660032BE93 /* MaskStockStores2.swift in Sources */,
 				1C33136F2466D21900A13829 /* MapView.swift in Sources */,
-				1CE0F3AE24A718120009BF39 /* MaskStockStores.swift in Sources */,
 				1C6CF0982491EB9A009EE07F /* Artwork.swift in Sources */,
 				1C6C71AB24965318007BD5D7 /* ArtworkViews2.swift in Sources */,
 				1CD2E1B22459FA7700B5F8D2 /* NationwideStatus.swift in Sources */,
-				1C70B95A2471285A0016F548 /* IndexedCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

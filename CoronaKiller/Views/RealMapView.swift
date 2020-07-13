@@ -26,7 +26,7 @@ struct RealMapView: View {
     @ObservedObject var resultStore: searchResultsStore = searchResultsStore()
     
     // API통신 저장  객체 - !! 기억 전달할 것.
-        // 재고 정보 저장 객체
+        // 재고 정보 저장 객체 / // 현재 정부에서, 공적마스크 공급 중단으로 인해, API 서버를 닫은 상태입니다 !!
     @ObservedObject var stockInfoSet: storesStockInfoSet = storesStockInfoSet()
         // 아트워크 저장 객체
     @ObservedObject var nowArtWorks: NowArtworks = NowArtworks()

@@ -1,4 +1,3 @@
-//
 //  MaskStockStores.swift
 //  CoronaKiller
 //
@@ -38,6 +37,7 @@ class MaskStockStoresAPI {
         self.coordi = coordi
     }
     
+    // 현재 정부에서, 공적마스크 공급 중단으로 인해, API 서버를 닫은 상태입니다 !!
     func fetchStores(completion: @escaping(storesStore) -> () ){ // return values is possible
         guard let url = URL(string: "https://8oi9s0nnth.apigw.ntruss.com/corona19-masks/v1/storesByGeo/json?lat=\(coordi.latitude)&lng=\(coordi.longitude)&m=5000") else {return}
             //API call
@@ -53,5 +53,4 @@ class MaskStockStoresAPI {
         }
     
 }
-
 

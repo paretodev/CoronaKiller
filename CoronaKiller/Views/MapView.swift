@@ -45,7 +45,7 @@ struct MapView: UIViewRepresentable {
                 // 현위치 기준으로 api call
                 MaskStockStoresAPI(coordi: self.$userviewCenter.wrappedValue).fetchStores{ (queriedStoreInfoSet) in
                     
-                    // DataTask가 끝나면 다음이 실행됨 - 다 다운되면,
+                    // queriedInfoSet이 다 다운될 때 까지 대기
                     self.stockInfoSet.stores = queriedStoreInfoSet.stores
                     print("Api호출 결과 로그 갯수:", self.stockInfoSet.stores.count)
                     
@@ -78,12 +78,13 @@ struct MapView: UIViewRepresentable {
                     }
                     print("주석 객체 업데이트 정보 : \(self.$artworksUpdated.artworksToDisplay.wrappedValue.count)")
                 }
-        // 1). 현 위치 fetch 실패시 - 에러를 낸다, 지피에스 오류
+        // 1). 유저의 현 위치 fetch 실패시 - 에러 발생
             } else {
                 print("Location was not fetched.")
                 print("Get Location failed \(self.getLocation.didFailWithError ?? "Location Fetch Failed." as! Error)")
             }
         }
+        
         // 2). 맵뷰 설정 시작
         let mapView = MKMapView(frame: UIScreen.main.bounds)
         mapView.delegate = context.coordinator
@@ -94,7 +95,7 @@ struct MapView: UIViewRepresentable {
         forAnnotationViewWithReuseIdentifier:
           MKMapViewDefaultAnnotationViewReuseIdentifier)
         
-        // 3). [아직 구현 안 됨]주석 더하기
+        // 3). 아트워크 더하기
         mapView.addAnnotations(self.$artworksUpdated.artworksToDisplay.wrappedValue)
         // 4). 1)에서 fetch한 현재 위치를 기준으로 반경 3키로 미터 이내 표시
         let region = MKCoordinateRegion(center: self.$userviewCenter.wrappedValue, latitudinalMeters: 1500, longitudinalMeters: 1500)
@@ -107,15 +108,24 @@ struct MapView: UIViewRepresentable {
         print("makeUIview완성")
         // 5). 위와 같이 설정한 지도뷰를 리턴
         return mapView
+        
     }
     
+    
     func updateUIView(_ uiView: MKMapView, context: Context) {
-        // 실시간 : 바뀐 장소 기준으로 region객체 생성
+        
+        // SwiftUI is managing the memory of @State and @Binding objects and
+        // automatically refreshes any UI of any Views that rely on your variable.
+        // 해당 뷰의 : observable object, userSetLocation 등이 변하면, 스위프트 유아이가 해당 변수의 메모리를 관리중이다가
+        // 포함하고 있는 모든 UI를 업데이트한다.
+        
+        // 실시간 : @state @observable object @binding 변수에 업데이트가 생기면 다음의 블록을 실행
         let region = MKCoordinateRegion(center: self.$userviewCenter.wrappedValue, latitudinalMeters: 1500, longitudinalMeters: 1500)
         // 실시간 : 바뀐 주석 추가
         uiView.addAnnotations(self.$artworksUpdated.artworksToDisplay.wrappedValue)
-        // 실시간 : 바뀐 장소에 따라 뷰 이동
+        // 실시간 : 바뀐 장소에 따라 뷰를 따라서 이동
         uiView.setRegion(region, animated: true)
+        
     }
     
     func makeCoordinator() -> Coordinator {
@@ -127,35 +137,7 @@ struct MapView: UIViewRepresentable {
         init(_ parent: MapView) {
             self.parent = parent
         }
-        // 유저가 맵뷰에서 움직이면 UIcenter에 좌료 저장 업데이트
-//        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//
-//            guard let annotation = annotation as? Artwork else {
-//              return nil
-//            }
-//            // 3
-//            let identifier = "artwork"
-//            var view: MKMarkerAnnotationView
-//            // 4
-//            if let dequeuedView = mapView.dequeueReusableAnnotationView(
-//              withIdentifier: identifier) as? MKMarkerAnnotationView {
-//
-//              dequeuedView.annotation = annotation
-//              view = dequeuedView
-//
-//            } else {
-//
-//              view = MKMarkerAnnotationView(
-//                annotation: annotation,
-//                reuseIdentifier: identifier)
-//              view.canShowCallout = true
-//              view.calloutOffset = CGPoint(x: -5, y: 5)
-//              view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-//
-//            }
-//            return view
-//        }
-//
+ 
         func mapView(
           _ mapView: MKMapView,
           annotationView view: MKAnnotationView,

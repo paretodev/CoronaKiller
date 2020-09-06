@@ -35,8 +35,7 @@ struct RowView: View {
                              
                              // DataTask가 끝나면 다음이 실행됨 - 다 다운되면,
                              self.$stockInfoSet.stores.wrappedValue = queriedStoreInfoSet.stores
-                             print("Api호출 결과 로그 갯수:", self.stockInfoSet.stores.count)
-                             
+                    
                              // self.focusInfoStores.store를 => [Artwork]로 맵핑
                              self.$artworksUpdated.artworksToDisplay.wrappedValue = self.stockInfoSet.stores.map{ (store) in
                                  // 가게명
@@ -65,9 +64,6 @@ struct RowView: View {
                              }
                              print("검색에 의한 업데이트 완료")
                          }
-                
-                
-                // store를 업데이트 해주는 거 어떰??
                 
                 
             }) {

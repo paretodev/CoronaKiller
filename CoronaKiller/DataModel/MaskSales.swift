@@ -25,7 +25,8 @@ class MaskSalesAPI {
         //API call
         URLSession.shared.dataTask(with: url) { (data, _, _) in
         let salesinfos = try! JSONDecoder().decode([MasksSale].self, from: data!) // decoded json format
-            // interact with the app while at same time doing api call
+            // from global queue -> main queue, asynch
+                // 비동기로 메인 큐에서 다음의 과정을 시작합니다.
             DispatchQueue.main.async {
                 completion(salesinfos)
             }

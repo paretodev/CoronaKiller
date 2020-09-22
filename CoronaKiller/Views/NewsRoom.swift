@@ -16,6 +16,9 @@ struct NewsRoom: View {
     
     var body: some View {
         
+        // 비동기로 API에서 통신을 하면서, UI뷰 빌드업은 계속하고, API 시퀀스 끝날 때쯤 비동기로 메인 큐에서
+        // newses에 API에서 다운 받는 것을  assign
+        
         List(newses){ anArticle in
             
             VStack(alignment: .leading){

@@ -97,7 +97,7 @@ struct MapView2: UIViewRepresentable {
         forAnnotationViewWithReuseIdentifier:
           MKMapViewDefaultAnnotationViewReuseIdentifier)
         
-        // 3). [아직 구현 안 됨]주석 더하기
+        // 3). 아직 네트워킹이 완성되지 않았을 수 있는, 아트워크 주석 객체 컬렉션을 옵져브드 오브젝트의 형태로 맵뷰에 추가 더하기
         mapView.addAnnotations(self.$artworks.wrappedValue)
         // 4). 1)에서 fetch한 현재 위치를 기준으로 반경 3키로 미터 이내 표시
         let region = MKCoordinateRegion(center: self.$userviewCenter.wrappedValue, latitudinalMeters: 750, longitudinalMeters: 750)

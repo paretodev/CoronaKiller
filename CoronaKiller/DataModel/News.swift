@@ -18,17 +18,24 @@ struct AnArticle: Codable, Identifiable {
 }
 
 class API {
-    func getNewses(completion: @escaping([AnArticle]) -> () ){ // return values is possible
+    
+    func getNewses( completion: @escaping( [AnArticle] ) -> () ){ // return values is possible
+        
         guard let url = URL(string: "https://fy0810k9v5.execute-api.ap-northeast-2.amazonaws.com/dev/covid19/articles.json/") else {return}
         //API call
         URLSession.shared.dataTask(with: url) { (data, _, _) in
-        let newses = try! JSONDecoder().decode([AnArticle].self, from: data!) // decoded json format
-        //test print newses
-            // interact with the app while at same time doing api call
+        let newses = try! JSONDecoder().decode([AnArticle].self, from: data!)
+            
             DispatchQueue.main.async {
                 completion(newses)
             }
+            
         }
         .resume()
     }
+    
 }
+
+/*
+DistpatchQueue.main.async : means this will happen on a background thread and update the main thread when it is finished
+ */

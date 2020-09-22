@@ -53,7 +53,7 @@ class API_Confirmer {
             
             guard let httpResponse = response as? HTTPURLResponse,
                 (200...299).contains(httpResponse.statusCode) else {
-                print( "unexepected response from network" )
+                print( "Got unintended Network response." )
                 return
             }
             

@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C1DC59E2528CAE200DCE432 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C1DC59D2528CAE200DCE432 /* DoHyeon-Regular.ttf */; };
+		1C267CF5251BAC1B007E53F9 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C267CF4251BAC1B007E53F9 /* test.swift */; };
 		1C33136F2466D21900A13829 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C33136E2466D21900A13829 /* MapView.swift */; };
 		1C34072B2470258400BEA244 /* DstoreArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C34072A2470258400BEA244 /* DstoreArray.swift */; };
+		1C48758F2528AB1100E5388E /* SongMyung-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C48758E2528AB1100E5388E /* SongMyung-Regular.ttf */; };
 		1C69FAC524853DA900809CA5 /* PublicMaskQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C69FAC424853DA800809CA5 /* PublicMaskQuestion.swift */; };
 		1C6C719324961B5A007BD5D7 /* ArtworkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6C719224961B5A007BD5D7 /* ArtworkViews.swift */; };
 		1C6C719F24963A98007BD5D7 /* PatientsPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6C719E24963A98007BD5D7 /* PatientsPathView.swift */; };
@@ -33,6 +36,7 @@
 		1CB3E74F24BC8C480032BE93 /* ForEach2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3E74E24BC8C480032BE93 /* ForEach2.swift */; };
 		1CB3E75124BC8C790032BE93 /* IndexedCollection2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3E75024BC8C790032BE93 /* IndexedCollection2.swift */; };
 		1CB3E75524BC98660032BE93 /* MaskStockStores2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3E75424BC98660032BE93 /* MaskStockStores2.swift */; };
+		1CBBA7CE2528B0E200806BE0 /* BlackHanSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CBBA7CD2528B0E200806BE0 /* BlackHanSans-Regular.ttf */; };
 		1CD2E1902459D61700B5F8D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2E18F2459D61700B5F8D2 /* AppDelegate.swift */; };
 		1CD2E1922459D61700B5F8D2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2E1912459D61700B5F8D2 /* SceneDelegate.swift */; };
 		1CD2E1942459D61700B5F8D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2E1932459D61700B5F8D2 /* ContentView.swift */; };
@@ -48,8 +52,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C1DC59D2528CAE200DCE432 /* DoHyeon-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DoHyeon-Regular.ttf"; path = "../../../../../../컴구조_모음/Do_Hyeon (1)/DoHyeon-Regular.ttf"; sourceTree = "<group>"; };
+		1C267CF4251BAC1B007E53F9 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		1C33136E2466D21900A13829 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		1C34072A2470258400BEA244 /* DstoreArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DstoreArray.swift; sourceTree = "<group>"; };
+		1C48758E2528AB1100E5388E /* SongMyung-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SongMyung-Regular.ttf"; path = "../../../../../../컴구조_모음/Song_Myung (1)/SongMyung-Regular.ttf"; sourceTree = "<group>"; };
 		1C69FAC424853DA800809CA5 /* PublicMaskQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicMaskQuestion.swift; sourceTree = "<group>"; };
 		1C6C719224961B5A007BD5D7 /* ArtworkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkViews.swift; sourceTree = "<group>"; };
 		1C6C719E24963A98007BD5D7 /* PatientsPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsPathView.swift; sourceTree = "<group>"; };
@@ -74,6 +81,7 @@
 		1CB3E74E24BC8C480032BE93 /* ForEach2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForEach2.swift; sourceTree = "<group>"; };
 		1CB3E75024BC8C790032BE93 /* IndexedCollection2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexedCollection2.swift; sourceTree = "<group>"; };
 		1CB3E75424BC98660032BE93 /* MaskStockStores2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskStockStores2.swift; sourceTree = "<group>"; };
+		1CBBA7CD2528B0E200806BE0 /* BlackHanSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BlackHanSans-Regular.ttf"; path = "../../../../../../컴구조_모음/Black_Han_Sans/BlackHanSans-Regular.ttf"; sourceTree = "<group>"; };
 		1CD2E18C2459D61700B5F8D2 /* CoronaKiller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoronaKiller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CD2E18F2459D61700B5F8D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CD2E1912459D61700B5F8D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +109,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C48758D2528AAE300E5388E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1C1DC59D2528CAE200DCE432 /* DoHyeon-Regular.ttf */,
+				1CBBA7CD2528B0E200806BE0 /* BlackHanSans-Regular.ttf */,
+				1C48758E2528AB1100E5388E /* SongMyung-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		1C70B9562471284D0016F548 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +148,7 @@
 		1CD2E18E2459D61700B5F8D2 /* CoronaKiller */ = {
 			isa = PBXGroup;
 			children = (
+				1C48758D2528AAE300E5388E /* Fonts */,
 				1CD2E18F2459D61700B5F8D2 /* AppDelegate.swift */,
 				1CD2E1912459D61700B5F8D2 /* SceneDelegate.swift */,
 				1CD2E1A62459E19900B5F8D2 /* DataModel */,
@@ -167,6 +186,7 @@
 				1C6C71A424964395007BD5D7 /* AddressSearchView2.swift */,
 				1C6C71A8249650E5007BD5D7 /* RowView2.swift */,
 				1C6C71AC24966AEC007BD5D7 /* MasksSalesVIew.swift */,
+				1C267CF4251BAC1B007E53F9 /* test.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -222,7 +242,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = suckyDuke;
 				TargetAttributes = {
 					1CD2E18B2459D61700B5F8D2 = {
@@ -256,6 +276,9 @@
 				1CD2E19C2459D61B00B5F8D2 /* LaunchScreen.storyboard in Resources */,
 				1CD2E1992459D61B00B5F8D2 /* Preview Assets.xcassets in Resources */,
 				1CD2E1962459D61B00B5F8D2 /* Assets.xcassets in Resources */,
+				1C48758F2528AB1100E5388E /* SongMyung-Regular.ttf in Resources */,
+				1C1DC59E2528CAE200DCE432 /* DoHyeon-Regular.ttf in Resources */,
+				1CBBA7CE2528B0E200806BE0 /* BlackHanSans-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +302,7 @@
 				1C69FAC524853DA900809CA5 /* PublicMaskQuestion.swift in Sources */,
 				1CD2E1942459D61700B5F8D2 /* ContentView.swift in Sources */,
 				1C6C719324961B5A007BD5D7 /* ArtworkViews.swift in Sources */,
+				1C267CF5251BAC1B007E53F9 /* test.swift in Sources */,
 				1C6CF08E2491B06D009EE07F /* GetLocation.swift in Sources */,
 				1C6C71A124963B15007BD5D7 /* MapView2.swift in Sources */,
 				1C6CF0942491C064009EE07F /* realtimeDisplayMaskStockInfo.swift in Sources */,
@@ -344,6 +368,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -404,6 +429,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

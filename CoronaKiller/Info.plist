@@ -60,5 +60,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BlackHanSans-Regular.ttf</string>
+		<string>SongMyung-Regular.ttf</string>
+		<string>DoHyeon-Regular.ttf</string>
+	</array>
 </dict>
 </plist>

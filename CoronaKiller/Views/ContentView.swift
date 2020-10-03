@@ -5,7 +5,6 @@
 //  Created by 한석희 on 2020/04/30.
 //  Copyright © 2020 suckyDuke. All rights reserved.
 //
-
 import SwiftUI
 
 struct ContentView: View {
@@ -14,7 +13,7 @@ struct ContentView: View {
     struct LabelStyle: ViewModifier {
         func body(content: Content) -> some View {
             return content
-                .font(Font.custom("Arial Rounded MT Bold", size: 25))
+                .font(Font.custom("DoHyeon-Regular", size: 29))
         }
     }
     
@@ -22,7 +21,7 @@ struct ContentView: View {
         
         NavigationView {
             VStack{
-                Image("2019-ncov").padding(.bottom, 10).padding(.top, 20)
+                Image("2019-ncov").padding(.bottom, 40).padding(.top, 30)
                 
                 //Nav Link1
                 NavigationLink(destination: NewsRoom()) {
@@ -58,7 +57,7 @@ struct ContentView: View {
                     Spacer()
                 }
             
-            }.foregroundColor(Color.red)
+            }.foregroundColor(Color.blue )
     
             .navigationBarTitle("코로나 All in One").multilineTextAlignment(.center)
         }.background(Color(red: 252, green: 237, blue: 238))
@@ -73,4 +72,3 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 }
-

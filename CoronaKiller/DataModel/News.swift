@@ -11,7 +11,7 @@ import Foundation
 // MARK: - AnArticle
 
 struct AnArticle: Codable, Identifiable {
-    let id = UUID()
+    var id = UUID()
     let title, reference: String
     let url: String
     let date_created: String

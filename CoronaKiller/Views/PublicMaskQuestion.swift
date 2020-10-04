@@ -110,14 +110,6 @@ struct PublicMaskQuestion: View {
 
         }
         
-//        ForEach(0 ..< colors.count) {
-//             Text(self.colors[$0])
-//         }
-        
-//        DatePicker(selection: $birthDate, in: ...Date(), displayedComponents: .date) {
-//            Text("Select a date")
-//        }
-        
     }
 }
 

@@ -31,13 +31,15 @@ struct PatientsPathView: View {
                 .font(Font.custom("DoHyeon-Regular", size: 14))
         }
     }
+    // 맵뷰2에 바인딩으로 전달 - 위치 잡는 것에 실패시 띄울 alert창 불리언 값
+    @State var showingAlertMapView = false
     
     var body: some View {
         
         VStack{
             
             // mapview
-            MapView2(userviewCenter: self.$userviewCenter, UIcenter: self.$uiCenter, userSetLocation: self.$userSetLocation)
+            MapView2(userviewCenter: self.$userviewCenter, UIcenter: self.$uiCenter, userSetLocation: self.$userSetLocation, showingAlertMapView : self.$showingAlertMapView)
             
             //
             // button for searchview
@@ -76,10 +78,28 @@ struct PatientsPathView: View {
             // to create a view on a modal
         })
 
-            
-    .navigationBarTitle("실시간 확진자 동선")
+            .navigationBarTitle("실시간 확진자 동선")
 
         }
+        
+        
+        // mapview2에서 위치 잡기 실패시 alert창 띄움
+        .alert( isPresented: $showingAlertMapView ){
+                
+            Alert( title: Text("위치 설정 오류"),
+                    message: Text("GPS가 정상적으로 작동하지 않고 있습니다. 위치 검색을 대신 사용해보세요."),
+                    primaryButton: .destructive( Text("네"), action: {
+                        // setback
+                        self.$showingAlertMapView.wrappedValue = false
+                    }
+                    ),
+                    secondaryButton: .cancel( Text("아니오"), action: {
+                        self.$showingAlertMapView.wrappedValue = false
+                    }
+                )
+            )
+        }
+        
     }
 }
 

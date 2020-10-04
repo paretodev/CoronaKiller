@@ -21,6 +21,7 @@ struct MapView2: UIViewRepresentable {
     let getLocation = GetLocation()
     @State var confirmersInfoSet: Confirmer = Confirmer(type: "", features: [])
     @State var artworks : [Artwork2] = []
+    @Binding var showingAlertMapView : Bool
     
     // 1). method - 1
     func setupMananger() {
@@ -36,13 +37,57 @@ struct MapView2: UIViewRepresentable {
         setupMananger()
         // 1). 현 위치 fetch 성공시
         getLocation.run {
+            
             if let location = $0 {
-                self.$userviewCenter.wrappedValue = location.coordinate
-                print("현재 위치 fetched")
-                print("위도 : ", self.$userviewCenter.wrappedValue.longitude)
-                print("경도 : ", self.$userviewCenter.wrappedValue.latitude)
                 
-                // 현위치 기준으로 api call => Artworks2 객체들 만드릭
+                self.$userviewCenter.wrappedValue = location.coordinate
+   
+                // 현위치 기준으로 api call => Artworks2 객체들 만들기
+                API_Confirmer().getConfirmers { (confirmersSet) in
+                    
+                    self.confirmersInfoSet = confirmersSet
+                
+                    // 여기서 필요한 것 추출하기
+                    
+                    let features = self.confirmersInfoSet.features
+                    // feature 하나 하나 마다 이터레이션 하며
+                    // artworks 만들기
+                    for aStructure in features {
+                        
+                        let lng = aStructure.geometry.coordinates[0]
+                        let lat = aStructure.geometry.coordinates[1]
+                        let coordinates = CLLocationCoordinate2D.init(latitude: lat, longitude: lng)
+                        
+                        let title = aStructure.properties.text
+                        let pollutionLevel = aStructure.properties.pollution // String
+                        var subtitle = ""
+                        
+                        switch pollutionLevel {
+                        case "1":
+                            subtitle = "24시간이내 방문"
+                        case "2":
+                            subtitle = "4일 ~ 1일이내 방문"
+                        case "3":
+                            subtitle = "4일 ~ 9일이내 방문"
+                        default:
+                            subtitle = "방문한 지 9일 초과"
+                        }
+                        
+                        self.artworks.append(Artwork2(title: title, subtitle:subtitle, coordinate: coordinates, pollutionLevel: pollutionLevel))
+                        
+                    }
+                    
+                }
+            }
+            
+        // 1). 현 위치 fetch 실패시 =>
+            // 1. 디폴트 위치(잠실역) 기준으로 유아이 빌드 진행
+            // 2. 앨러트 창을 띄움
+            else {
+                
+                self.$userviewCenter.wrappedValue = CLLocationCoordinate2D.init( latitude: 37.513287 , longitude: 127.100126 )
+   
+                // 현위치 기준으로 api call => Artworks2 객체들 만들기
                 API_Confirmer().getConfirmers { (confirmersSet) in
                     
                     self.confirmersInfoSet = confirmersSet
@@ -79,13 +124,12 @@ struct MapView2: UIViewRepresentable {
                     
                 }
                 
+                // 2). alert
+                self.$showingAlertMapView.wrappedValue = true
+                
+                
             }
             
-        // 1). 현 위치 fetch 실패시 - 에러를 낸다, 지피에스 오류
-            else {
-                print("Location was not fetched.")
-                print("Get Location failed \(self.getLocation.didFailWithError ?? "Location Fetch Failed." as! Error)")
-            }
         }
         // 2). 맵뷰 설정 시작
         let mapView = MKMapView(frame: UIScreen.main.bounds)

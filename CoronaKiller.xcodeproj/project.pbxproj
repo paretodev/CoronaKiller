@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C1DC59E2528CAE200DCE432 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C1DC59D2528CAE200DCE432 /* DoHyeon-Regular.ttf */; };
 		1C33136F2466D21900A13829 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C33136E2466D21900A13829 /* MapView.swift */; };
 		1C34072B2470258400BEA244 /* DstoreArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C34072A2470258400BEA244 /* DstoreArray.swift */; };
+		1C36FBBA2529D37D0051C7F2 /* DoHyeon-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1C36FBB92529D37D0051C7F2 /* DoHyeon-Regular.ttf */; };
 		1C69FAC524853DA900809CA5 /* PublicMaskQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C69FAC424853DA800809CA5 /* PublicMaskQuestion.swift */; };
 		1C6C719324961B5A007BD5D7 /* ArtworkViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6C719224961B5A007BD5D7 /* ArtworkViews.swift */; };
 		1C6C719F24963A98007BD5D7 /* PatientsPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6C719E24963A98007BD5D7 /* PatientsPathView.swift */; };
@@ -49,9 +49,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1C1DC59D2528CAE200DCE432 /* DoHyeon-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DoHyeon-Regular.ttf"; path = "../../../../../../컴구조_모음/Do_Hyeon (1)/DoHyeon-Regular.ttf"; sourceTree = "<group>"; };
 		1C33136E2466D21900A13829 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		1C34072A2470258400BEA244 /* DstoreArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DstoreArray.swift; sourceTree = "<group>"; };
+		1C36FBB92529D37D0051C7F2 /* DoHyeon-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "DoHyeon-Regular.ttf"; path = "../../../../../../컴구조_모음/Do_Hyeon/DoHyeon-Regular.ttf"; sourceTree = "<group>"; };
 		1C69FAC424853DA800809CA5 /* PublicMaskQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicMaskQuestion.swift; sourceTree = "<group>"; };
 		1C6C719224961B5A007BD5D7 /* ArtworkViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkViews.swift; sourceTree = "<group>"; };
 		1C6C719E24963A98007BD5D7 /* PatientsPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientsPathView.swift; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		1C48758D2528AAE300E5388E /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				1C1DC59D2528CAE200DCE432 /* DoHyeon-Regular.ttf */,
+				1C36FBB92529D37D0051C7F2 /* DoHyeon-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -267,7 +267,7 @@
 				1CD2E19C2459D61B00B5F8D2 /* LaunchScreen.storyboard in Resources */,
 				1CD2E1992459D61B00B5F8D2 /* Preview Assets.xcassets in Resources */,
 				1CD2E1962459D61B00B5F8D2 /* Assets.xcassets in Resources */,
-				1C1DC59E2528CAE200DCE432 /* DoHyeon-Regular.ttf in Resources */,
+				1C36FBBA2529D37D0051C7F2 /* DoHyeon-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

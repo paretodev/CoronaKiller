@@ -24,6 +24,8 @@ struct RealMapView: View {
     let getLocation = GetLocation()
     // 검색뷰에 바인딩 전달할 것 - 서치결과 struct들을 포함하고 있다.
     @ObservedObject var resultStore: searchResultsStore = searchResultsStore()
+    // 맵뷰1에 바인딩 전달 - 위치 잡는 것에 실패시 띄울 경고 불리언 값
+    @State var showingAlertMapView = false
     
     // API통신 내용 저장 객체
         // 재고 정보 저장 객체 / // 현재 정부에서, 공적마스크 공급 중단으로 인해, API 서버를 닫은 상태입니다 !!
@@ -45,7 +47,7 @@ struct RealMapView: View {
                 
                 // mapview
                 MapView(userviewCenter: self.$userviewCenter, UIcenter: self.$uiCenter, userSetLocation: self.$userSetLocation, artworksUpdated: self.nowArtWorks,
-stockInfoSet: self.stockInfoSet)
+                        stockInfoSet: self.stockInfoSet, showingAlertMapView: self.$showingAlertMapView )
                 
                 //
                 // button for searchview
@@ -101,8 +103,26 @@ stockInfoSet: self.stockInfoSet)
                     }
                 )
             }
+            
+        // map1에서 위치 잡기 실패시 alert창 띄움
+        .alert(isPresented: $showingAlertMapView ) {
+                
+            Alert( title: Text("위치 설정 오류"),
+                    message: Text("GPS가 정상적으로 작동하지 않고 있습니다. 위치 검색을 대신 사용해보세요."),
+                    primaryButton: .destructive( Text("네"), action: {
+                    // setback
+                    self.$showingAlertMapView.wrappedValue = false
+                    }
+                    ),
+                    secondaryButton: .cancel( Text("아니오"), action: {
+                    self.$showingAlertMapView.wrappedValue = false
+                    }
+                )
+            )
+            
         }
     }
+}
 
 
 // Modal sheet 옵션2
@@ -111,6 +131,5 @@ struct Sheet2: View {
         PublicMaskQuestion()
     }
 }
-
 
 

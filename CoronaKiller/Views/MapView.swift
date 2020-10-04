@@ -21,6 +21,7 @@ struct MapView: UIViewRepresentable {
     @ObservedObject var artworksUpdated: NowArtworks
     @ObservedObject var stockInfoSet: storesStockInfoSet
     let getLocation = GetLocation()
+    @Binding var showingAlertMapView : Bool
     
     // 1). method - 1
     func setupMananger() {
@@ -40,16 +41,11 @@ struct MapView: UIViewRepresentable {
             if let location = $0 {
                 
                 self.$userviewCenter.wrappedValue = location.coordinate
-                print("현재 위치 fetched")
-                print("위도 : ", self.$userviewCenter.wrappedValue.longitude)
-                print("경도 : ", self.$userviewCenter.wrappedValue.latitude)
                 
-                // 현위치 기준으로 api call
                 MaskStockStoresAPI(coordi: self.$userviewCenter.wrappedValue).fetchStores{ (queriedStoreInfoSet) in
                     
                     // queriedInfoSet이 다 다운될 때 까지 대기
                     self.stockInfoSet.stores = queriedStoreInfoSet.stores
-                    print("Api호출 결과 로그 갯수:", self.stockInfoSet.stores.count)
                     
                     // self.focusInfoStores.store를 => [Artwork]로 맵핑
                     self.$artworksUpdated.artworksToDisplay.wrappedValue = self.stockInfoSet.stores.map{ (store) in
@@ -80,11 +76,51 @@ struct MapView: UIViewRepresentable {
                     }
                     
                 }
-        // 1). 유저의 현 위치 fetch 실패시 - 로그 찍기
-            } else {
+            }
+            // 2). 유저의 현 위치 fetch 실패시
+                    // 1. 디폴트 설정 위치(잠실역)로 make ui view 진행 37.513287, 127.100126
+                    // 2. alert상자를 띄워서, "위치를 가져오는 데에 실패했습니다. 검색을 이용해보세요."
+            else {
                 
-                print("GPS를 확인해주세요")
-                print( "Get Location failed \( self.getLocation.didFailWithError ?? "Location Fetch Failed." as! Error )" )
+                self.$userviewCenter.wrappedValue = CLLocationCoordinate2D.init( latitude: 37.513287 , longitude: 127.100126 )
+                
+                MaskStockStoresAPI(coordi: self.$userviewCenter.wrappedValue).fetchStores{ (queriedStoreInfoSet) in
+                    
+                    // queriedInfoSet이 다 다운될 때 까지 대기
+                    self.stockInfoSet.stores = queriedStoreInfoSet.stores
+                    
+                    // self.focusInfoStores.store를 => [Artwork]로 맵핑
+                    self.$artworksUpdated.artworksToDisplay.wrappedValue = self.stockInfoSet.stores.map{ (store) in
+                        // 가게명
+                        let storeName = store.name
+                        // 재고량, 유저가 보는 재고량
+                        let stockLevelSystem = store.remain_stat ?? "unknown"
+                        var stockLevelUser: String = ""
+                        switch stockLevelSystem {
+                        case "plenty":
+                            stockLevelUser = "100개 이상"
+                        case "some":
+                            stockLevelUser = "30 ~ 100개"
+                        case "few":
+                            stockLevelUser = "2 ~ 3개"
+                        case "emtpy":
+                            stockLevelUser = "1개 이하"
+                        default:
+                            stockLevelUser = "미파악 또는 판매중지"
+                        }
+                        // 좌표
+                        let storeCoordinates = CLLocationCoordinate2D.init(latitude: store.lat, longitude: store.lng)
+                        // callout에 표시할 subtitle
+                        let storeSubtitle = "공적마스크 잔여재고 : \(stockLevelUser)\n\(store.addr)"
+                        
+                        return Artwork(title: storeName, subtitle: storeSubtitle, coordinate: storeCoordinates, stockLevel: stockLevelSystem)
+                        
+                    }
+                    
+                }
+                
+                // RealMapView 바인딩 변수에 => true 전달
+                self.$showingAlertMapView.wrappedValue = true
                 
             }
         }

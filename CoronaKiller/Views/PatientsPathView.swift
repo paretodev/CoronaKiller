@@ -24,9 +24,13 @@ struct PatientsPathView: View {
     let getLocation = GetLocation()
     // 검색뷰에 바인딩 전달할 것 - 서치결과 struct들을 포함하고 있다.
     @ObservedObject var resultStore: searchResultsStore = searchResultsStore()
-    
-    // 바꾸어야 할 부분 API통신 저장부
-    // makeUIview 할 때 한번에 하기.
+    // 라벨 스타일러
+    struct LabelStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .font(Font.custom("DoHyeon-Regular", size: 14))
+        }
+    }
     
     var body: some View {
         
@@ -44,7 +48,7 @@ struct PatientsPathView: View {
                     self.modalSelection = "search"
                 }
                     ) {
-                        Text("장소 검색하여 보기").padding(.bottom, 25).padding(.trailing, 10)
+                        Text("장소 검색하여 보기").padding(.bottom, 25).padding(.trailing, 10).modifier(LabelStyle())
                 }
                 
                 Button( action:{
@@ -57,7 +61,7 @@ struct PatientsPathView: View {
                 }
                     
                 }){
-                    Text("현재 위치로 보기").padding(.bottom, 25).padding(.leading, 10)
+                    Text("현재 위치로 보기").padding(.bottom, 25).padding(.leading, 10).modifier(LabelStyle())
                 }
             }
                 

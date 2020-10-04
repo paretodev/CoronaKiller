@@ -20,18 +20,40 @@ struct MasksSale: Codable, Identifiable {
 class MaskSalesAPI {
     
     func getSalesInfos(completion: @escaping([MasksSale]) -> () ){ // return values is possible
-        // 현재는 서버가 내려간 상태입니다.
+        
         guard let url = URL(string: "https://fy0810k9v5.execute-api.ap-northeast-2.amazonaws.com/dev/covid19/stores.json/") else {return}
-        //API call
-        URLSession.shared.dataTask(with: url) { (data, _, _) in
-        let salesinfos = try! JSONDecoder().decode([MasksSale].self, from: data!) // decoded json format
-            // from global queue -> main queue, asynch
-                // 비동기로 메인 큐에서 다음의 과정을 시작합니다.
-            DispatchQueue.main.async {
-                completion(salesinfos)
-            }
-        }
+        
+        let task = URLSession.shared.dataTask(with: url) { ( data, response, error ) in
             
-        .resume()
+            if let error = error {
+                print("트랜스포트 에러 발생.")
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse, // server response - succeeded
+                        (200...299).contains(httpResponse.statusCode)
+                        else {
+                
+                        print("데이터를 정상적으로 불러올 수 없습니다.")
+                        return
+            }
+            
+            if let mimeType = httpResponse.mimeType, mimeType == "application/json" {
+                
+                let salesinfos = try! JSONDecoder().decode([MasksSale].self, from: data!)
+                    DispatchQueue.main.async {
+                        completion( salesinfos )
+                    }
+                
+            }
+            
+            else {
+                print("서버가 적절한 포맷의 데이터를 제공하고 있지 않음.")
+            }
+    
+        }
+    
+        task.resume()
+        
     }
 }

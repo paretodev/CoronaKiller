@@ -5,6 +5,13 @@ struct MasksSalesView: View {
     @State var maskSales: [MasksSale] = []
     @State var modalisPresented = false
     @State var nowUrl: String = "https://www.google.com" // 기본 url
+    // 라벨 스타일러
+    struct LabelStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .font(Font.custom("DoHyeon-Regular", size: 14))
+        }
+    }
     
     var body: some View {
         
@@ -12,11 +19,12 @@ struct MasksSalesView: View {
             
             VStack(alignment: .leading){
                 HStack{
-                    Text("\(aDeal.price)원").foregroundColor(Color.blue) // api company name
+                    Text("\(aDeal.price)원").foregroundColor(Color.blue)
+                        .modifier(LabelStyle())
                 }
                 HStack{
                     Text(aDeal.title).frame(width: 240, alignment: .leading)
-                        .font(Font.custom("Arial Rounded MT Bold", size: 14.8))
+                        .modifier(LabelStyle()).lineLimit(1)
                     
                     Divider()
                     
@@ -25,6 +33,7 @@ struct MasksSalesView: View {
                         self.modalisPresented = true
                     }) {
                         Text("스토어 방문>>").foregroundColor(.green).multilineTextAlignment(.center)
+                            .modifier(LabelStyle())
                     }
                     
                     }

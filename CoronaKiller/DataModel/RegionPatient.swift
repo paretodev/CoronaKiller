@@ -27,10 +27,9 @@ struct ARegionData: Codable, Identifiable {
 
 class ApiRegionsDatum {
     func getRegionsDatum(completion: @escaping([ARegionData]) -> () ) {
-        // url 지정
+
         guard let url = URL(string: "https://fy0810k9v5.execute-api.ap-northeast-2.amazonaws.com/dev/covid19/dashboard.json/") else {return}
         
-        // 유알엘에서 제이슨을 해독해서 포스트로 가져온다.
         let task = URLSession.shared.dataTask(with: url) { ( data, response, error ) in
             
             if let error = error {
@@ -46,7 +45,6 @@ class ApiRegionsDatum {
                         return
             }
             
-            // 3). 서버에서 공급받은 게,올바른 파일 포맷인지 확인하고, 맞다면 => 데이터 로드
             if let mimeType = httpResponse.mimeType, mimeType == "application/json" {
                 
                 let regionsDatum = try! JSONDecoder().decode([ARegionData].self, from: data!)
@@ -55,7 +53,7 @@ class ApiRegionsDatum {
                     }
                 
             }
-            // 3). 2. 올바른 파일 받지 못했을 때 핸들
+
             else {
                 print("서버가 적절한 포맷의 데이터를 제공하고 있지 않음.")
             }

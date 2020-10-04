@@ -36,7 +36,9 @@ struct MapView: UIViewRepresentable {
         setupMananger()
         // 1). 현 위치 fetch 성공시
         getLocation.run {
+            
             if let location = $0 {
+                
                 self.$userviewCenter.wrappedValue = location.coordinate
                 print("현재 위치 fetched")
                 print("위도 : ", self.$userviewCenter.wrappedValue.longitude)
@@ -76,12 +78,14 @@ struct MapView: UIViewRepresentable {
                         return Artwork(title: storeName, subtitle: storeSubtitle, coordinate: storeCoordinates, stockLevel: stockLevelSystem)
                         
                     }
-                    print("주석 객체 업데이트 정보 : \(self.$artworksUpdated.artworksToDisplay.wrappedValue.count)")
+                    
                 }
-        // 1). 유저의 현 위치 fetch 실패시 - 에러 발생
+        // 1). 유저의 현 위치 fetch 실패시 - 로그 찍기
             } else {
-                print("Location was not fetched.")
-                print("Get Location failed \(self.getLocation.didFailWithError ?? "Location Fetch Failed." as! Error)")
+                
+                print("GPS를 확인해주세요")
+                print( "Get Location failed \( self.getLocation.didFailWithError ?? "Location Fetch Failed." as! Error )" )
+                
             }
         }
         
@@ -158,8 +162,4 @@ struct MapView: UIViewRepresentable {
 
     
 
-struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
-    }
-}
+

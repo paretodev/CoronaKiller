@@ -25,12 +25,20 @@ struct RealMapView: View {
     // 검색뷰에 바인딩 전달할 것 - 서치결과 struct들을 포함하고 있다.
     @ObservedObject var resultStore: searchResultsStore = searchResultsStore()
     
-    // API통신 저장  객체 - !! 기억 전달할 것.
+    // API통신 내용 저장 객체
         // 재고 정보 저장 객체 / // 현재 정부에서, 공적마스크 공급 중단으로 인해, API 서버를 닫은 상태입니다 !!
     @ObservedObject var stockInfoSet: storesStockInfoSet = storesStockInfoSet()
         // 아트워크 저장 객체
     @ObservedObject var nowArtWorks: NowArtworks = NowArtworks()
+    // 라벨 스타일러
+    struct LabelStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .font(Font.custom("DoHyeon-Regular", size: 14))
+        }
+    } 
     
+    //
     var body: some View {
             
             VStack{
@@ -48,7 +56,7 @@ stockInfoSet: self.stockInfoSet)
                         self.modalSelection = "search"
                     }
                         ) {
-                            Text("장소 검색하여 보기").padding(.bottom, 25).padding(.trailing, 10)
+                            Text("장소 검색하여 보기").padding(.bottom, 25).padding(.trailing, 10).modifier(LabelStyle())
                     }
                     
                     Button( action:{
@@ -61,7 +69,7 @@ stockInfoSet: self.stockInfoSet)
                     }
                         
                     }){
-                        Text("현재 위치로 보기").padding(.bottom, 25).padding(.leading, 10)
+                        Text("현재 위치로 보기").padding(.bottom, 25).padding(.leading, 10).modifier(LabelStyle())
                     }
                 }
                     
@@ -69,10 +77,12 @@ stockInfoSet: self.stockInfoSet)
             // 위치 검색 시트 띄우기
                 .sheet(isPresented: $modalIsActive, content: {
                     
+                    // 검색용 시트 띄우기
                     if self.modalSelection == "search" {
                         addressSearchView(resultsStore: self.resultStore, searchedAddress: self.$userviewCenter, userSetLocation: self.$userSetLocation, modalIsActive: self.$modalIsActive, userviewCenter: self.$userviewCenter, stockInfoSet: self.stockInfoSet, artworksUpdated: self.nowArtWorks)
                     }
                     
+                    // 공적 마스크 구매 가능 여부 시트 띄우기
                     if self.modalSelection == "maskBuyPossibleCheck" {
                         Sheet2()
                     }
@@ -81,17 +91,14 @@ stockInfoSet: self.stockInfoSet)
             })
                     
         .navigationBarTitle("실시간 공적마스크 재고")
-                    
         .navigationBarItems(trailing:
                 
                     Button(action: {
                         self.modalSelection = "maskBuyPossibleCheck"
                         self.modalIsActive = true
                     }) {
-                       Text("공적마스크 구매 가능 확인")
+                       Text("공적마스크 구매 가능 확인").modifier(LabelStyle())
                     }
-                
-                
                 )
             }
         }
@@ -107,9 +114,3 @@ struct Sheet2: View {
 
 
 
-
-struct RealMapView_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
-    }
-}

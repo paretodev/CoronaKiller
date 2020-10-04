@@ -17,6 +17,8 @@ struct NationwideStatus: View {
         func body(content: Content) -> some View {
             return content
             .frame(width: 70, height: 40, alignment: .center)
+            .font(Font.custom("DoHyeon-Regular", size: 12))
+            
         }
     }
     
@@ -40,7 +42,7 @@ struct NationwideStatus: View {
             .foregroundColor(Color.blue)
             
             
-            // List - HStack
+            // List - Table of each region's data
             List(regionsDatum) { aRegionData in
                 
                 HStack{
@@ -49,42 +51,40 @@ struct NationwideStatus: View {
                             
                             Text("\(aRegionData.cityName)").modifier( TextBoxStyle() )
                             .frame(width: 70, height: 30, alignment: .center)
-                            .font(Font.custom("Arial Rounded MT Bold", size: 14))
+                            .font(Font.custom("DoHyeon-Regular", size: 14))
+                        
                             Text("\(aRegionData.dateUpdated)")
-                                .font(Font.custom("Arial Rounded MT Bold", size: 8.5)).foregroundColor(Color.gray)
+                                .font(Font.custom("DoHyeon-Regular", size: 8.5)).foregroundColor(Color.gray)
+                        
                             Text("업데이트")
-                                .font(Font.custom("Arial Rounded MT Bold", size: 7)).foregroundColor(Color.gray)
+                                .font(Font.custom("DoHyeon-Regular", size: 7)).foregroundColor(Color.gray)
 
                         }
-                        Divider()
-                        Text("\(aRegionData.confirmed)").modifier( TextBoxStyle() ) // 확진자
-                        Divider()
-                        Text("\(aRegionData.deaths)").modifier( TextBoxStyle() ) // 사망자
-                        Divider()
-                        Text("\(aRegionData.recovered)").modifier( TextBoxStyle() ) // 완치자
+                    Divider()
+                    
+                    Text("\(aRegionData.confirmed)").modifier( TextBoxStyle() ) // 확진자
+                    Divider()
+                    
+                    Text("\(aRegionData.deaths)").modifier( TextBoxStyle() ) // 사망자
+                    Divider()
+                    
+                    Text("\(aRegionData.recovered)").modifier( TextBoxStyle() ) // 완치자
                     
                 }
-                .frame(height: 55, alignment: .leading)
+                .frame(height: 50, alignment: .leading)
                 .padding(.leading, 15) // has additional padding
-                .font(Font.custom("Arial Rounded MT Bold", size: 12))
+                .font(Font.custom("DoHyeon-Regular", size: 12))
                 
             }// end of list
         
         }
-            
-        // setting body navigation title
-        .navigationBarTitle("전국 지역별 코로나 현황")
-        // api get posts
         .onAppear{
             ApiRegionsDatum().getRegionsDatum { (regionsDatum) in
             self.regionsDatum = regionsDatum
                 }
-            }
+        }
+        .navigationBarTitle("지역별 실시간 코로나 현황")
+        
     }// end of body
 }// end of NationwideStatus view
 
-struct NationwideStatus_Previews: PreviewProvider {
-    static var previews: some View {
-        NationwideStatus()
-    }
-}

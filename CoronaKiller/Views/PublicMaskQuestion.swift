@@ -14,12 +14,20 @@ struct PublicMaskQuestion: View {
     @State var answer: String = "공적마스크 구매 가능 요일을 조회해 보세요. \n주말엔, 주중에 구매한 이력이 없는 사람에 한해, \n모든 년생이 구매 가능합니다."
     let dayOfWeek = Calendar.current.component(.weekday, from: Date())
     let dayOfWeekDict = [1: "일", 2: "월", 3: "화", 4: "수", 5: "목", 6: "금", 7: "토"]
+    // 라벨 스타일러
+    struct LabelStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .font(Font.custom("DoHyeon-Regular", size: 21))
+        }
+    }
+    
 
     var body: some View {
         
         VStack {
             
-            Text("출생년도를 선택해주세요.")
+            Text("출생년도를 선택해주세요.").modifier(LabelStyle()).foregroundColor(.blue)
     
             Picker(selection: self.$yearBorn, label: EmptyView()){
                 
@@ -94,11 +102,11 @@ struct PublicMaskQuestion: View {
                 self.answer = "오늘은 \(whichDay)요일 입니다.\n" + self.answer
                 
             }) {
-                Text("조회")
+                Text("조회").modifier(LabelStyle())
             }
             
             Text(verbatim: self.answer).padding(.top, 30)
-                .multilineTextAlignment(.center)
+                .multilineTextAlignment(.center).modifier(LabelStyle())
 
         }
         

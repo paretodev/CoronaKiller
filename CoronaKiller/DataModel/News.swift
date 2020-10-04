@@ -39,7 +39,6 @@ class API {
                         return
             }
             
-            // 3). 서버에서 공급받은 게,올바른 파일 포맷인지 확인하고, 맞다면 => 데이터 로드
             if let mimeType = httpResponse.mimeType, mimeType == "application/json" {
                 
                 let newses = try! JSONDecoder().decode([AnArticle] .self, from: data!)
@@ -48,7 +47,7 @@ class API {
                     }
                 
             }
-            // 3). 2. 올바른 파일 받지 못했을 때 핸들
+            
             else {
                 print("서버가 적절한 포맷의 데이터를 제공하고 있지 않음.")
             }

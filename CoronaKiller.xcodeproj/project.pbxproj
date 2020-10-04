@@ -148,9 +148,9 @@
 		1CD2E18E2459D61700B5F8D2 /* CoronaKiller */ = {
 			isa = PBXGroup;
 			children = (
-				1C48758D2528AAE300E5388E /* Fonts */,
 				1CD2E18F2459D61700B5F8D2 /* AppDelegate.swift */,
 				1CD2E1912459D61700B5F8D2 /* SceneDelegate.swift */,
+				1C48758D2528AAE300E5388E /* Fonts */,
 				1CD2E1A62459E19900B5F8D2 /* DataModel */,
 				1CD2E1A32459DC1B00B5F8D2 /* Views */,
 				1CD2E1952459D61B00B5F8D2 /* Assets.xcassets */,

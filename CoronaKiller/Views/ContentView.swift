@@ -57,7 +57,7 @@ struct ContentView: View {
                     Spacer()
                 }
             
-            }.foregroundColor(Color.blue )
+            }.foregroundColor( Color.blue )
     
             .navigationBarTitle("코로나 All in One").multilineTextAlignment(.center)
         }.background(Color(red: 252, green: 237, blue: 238))

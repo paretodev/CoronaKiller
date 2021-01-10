@@ -18,7 +18,6 @@ struct NationwideStatus: View {
             return content
             .frame(width: 70, height: 40, alignment: .center)
             .font(Font.custom("DoHyeon-Regular", size: 12))
-            
         }
     }
     

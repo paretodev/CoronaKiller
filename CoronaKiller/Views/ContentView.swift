@@ -13,7 +13,6 @@ struct ContentView: View {
     struct LabelStyle: ViewModifier {
         func body(content: Content) -> some View {
             return content
-                .font(Font.custom("DoHyeon-Regular", size: 29))
         }
     }
     
